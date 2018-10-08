@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Login/Registration</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="\bootstrap\dist\css\bootstrap.css" />
+    <link rel="stylesheet" href="C:\Users\asus\Desktop\Yuval\Hackathon-Battery\node_modules\bootstrap\dist\css\bootstrap.css" />
     <link rel="stylesheet" href="\@fortawesome\fontawesome-free\css\fontawesome.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 
 </head>
+
 <body>
-    <h4>Login</h4>
-    <input type="text" class="form-control" id="login" placeholder="Username" >
-    <button type="button" class="btn btn-default" id="Login">Enter</button>
-    <hr>
-    <h4>Register</h4>
-    <input type="text" class="form-control" id="register" placeholder="Username" >
-    <button type="button" class="btn btn-default" id="Register">Submit</button>
+    <div class="container">
+        <nav class="navbar">
+            <h5 id="title"><span id="color-dark">BatteryLife</span><span id="color">.inc</span></h5>
+            <div id="names">Brought to you by Neomie & Yuval</div>
+        </nav>
+        <div class="one">
+            <h2>Login</h2>
+            <div class="form-group">
+                <input type="text" class="form-control" id="login" placeholder="Username">
+            </div>
+            <button type="button" class="btn" id="Login">Enter</button>
+        </div>
+        <hr>
+        <div class="two">
+            <h2>Register</h2>
+            <div class="form-group">
+                <input type="text" class="form-control" id="register" placeholder="Username">
+                <input type="text" class="form-control" id="first-name" placeholder="First Name">
+                <input type="text" class="form-control" id="last-name" placeholder="Last Name">
+            </div>
+            <button type="button" class="btn" id="Register">Submit</button>
+        </div>
+    </div>
 
     <script src="\jquery\dist\jquery.js"></script>
     <script src="\handlebars\dist\handlebars.js"></script>
     <script src="main.js"></script>
 </body>
+
 </html>
