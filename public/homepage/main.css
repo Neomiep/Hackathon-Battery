@@ -33,3 +33,15 @@ i{
   #color-dark{
     color:rgb(42, 121, 92);
   }
+
+  #amount {
+    width: 150px;
+    margin-top: 10px;
+  }
+
+  .container{
+    margin:0 auto;
+    margin-left:350px;
+    margin-top: 80px;
+}
+  
