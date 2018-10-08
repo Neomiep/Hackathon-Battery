@@ -23,7 +23,7 @@ button:hover {
 }
 
 .one{
-  background: -webkit-linear-gradient(#3CBC8D, rgb(138, 245, 205));
+  background: -webkit-linear-gradient(rgb(68, 202, 153), rgb(138, 245, 205));
   border: 1px solid rgb(65, 173, 133);
   width: 470px;
   height: 200px;
@@ -36,7 +36,7 @@ button:hover {
 }
 
 .two{
-  background: -webkit-linear-gradient(#3CBC8D, rgb(138, 245, 205));
+  background: -webkit-linear-gradient(rgb(68, 202, 153), rgb(138, 245, 205));
   border: 1px solid rgb(65, 173, 133);
   width: 470px;
   height: 280px;

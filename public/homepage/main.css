@@ -18,3 +18,18 @@ i{
     text-align:center;
     margin:5px;
 }
+
+.navbar {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  #title{
+    font-size: 30px;
+  }
+  #color{
+  color: #3CBC8D
+  }
+  
+  #color-dark{
+    color:rgb(42, 121, 92);
+  }
