@@ -10,4 +10,13 @@ let userSchema = new Schema ({
 
 let User = mongoose.model("user", userSchema);
 
+// User.findOne({ userName: '' }, function (err, user) {
+//     if (err) {
+//         res.status(500).send(err);
+//     }
+//   else {
+//       res.send(user)
+//   }
+//   });
+
 module.exports = User;
