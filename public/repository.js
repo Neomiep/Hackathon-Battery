@@ -1,16 +1,12 @@
 class UsersRepository {
-    constructor() {
-        this.users = [];
-    }
 
-    async getUsers() {
+    async login(){
         try {
-            let data = await $.get('/users')
-            this.users = data;
-            return data
+        let data = await $.get("/users")
+        return data
         }
-        catch (error) {
-            throw error;
+        catch(err){
+            throw err
         }
     }
 
@@ -18,7 +14,8 @@ class UsersRepository {
         const newUser = {username:username,firstname:firstname,lastname:lastname};
         try {
             let user = await $.post('/users/'+firstname + "/" + lastname + "/" + username, newUser)
-            this.users.push(user);
+            return user
+            // this.users.push(user);
         } catch (error) {
             throw error;
         }

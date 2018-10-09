@@ -12,12 +12,24 @@ class EventsHandler {
             if ($input === "" || $inputFname === "" || $inputLname === "") {
                 alert("Please enter text!");
             } else {
-             await this.usersRepository.addUser($input, $inputFname, $inputLname)
+             let user = await this.usersRepository.addUser($input, $inputFname, $inputLname)
+             localStorage.setItem("user", JSON.stringify(user))
+             location.href = "/homepage";
             }
             $("#register").val("")
             $("#first-name").val("")
             $("#last-name").val("")
+
         });
+    }
+
+    registerLogin(){
+        $("#Login").on("click",async()=>{
+            let user = await this.usersRepository.login()
+            localStorage.setItem("user", JSON.stringify(user))
+            location.href = "/homepage";
+            $("#login").val("")
+        })
     }
 
 }
