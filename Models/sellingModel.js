@@ -2,9 +2,9 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 let sellingSchema = new Schema({
-    amoant: String,
+    amount: Number,
     userSelling: [{type:Schema.Types.ObjectId, ref: "user"}],
-    buyers:[],
+    buyers:[{type:Schema.Types.ObjectId, ref: "buyer"}],
 })
 
 let Selling = mongoose.model("selling", sellingSchema);
