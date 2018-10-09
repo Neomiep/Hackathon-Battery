@@ -1,9 +1,9 @@
 const express = require('express');
-let User = require('./Models/userModel');
+let User = require('../Models/userModel');
 const router = express.Router();
 
 router.get('/users', function (req, res) {
-  User.find({}, function (err, users) {
+  User.find().populate("selling").exec( (err, users) =>{
     if (err) {
       res.status(500).send(err);
     }
@@ -17,7 +17,7 @@ router.post('/users', function (req, res) {
     if (err) {
       res.status(400).send(err);
     } else {
-      res.status(201).send(data);
+      res.send(data);
     }
   })
 });

@@ -23,5 +23,11 @@ class UsersRepository {
             throw error;
         }
     }
+
+    addSell(amount){
+        return $.sell('/sell', {amount: amount}).then((data)=>{
+            this.sell.push(data)
+        })
+    }
 }
     export default UsersRepository

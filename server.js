@@ -14,7 +14,11 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.use(express.static("public"))
 app.use(express.static("node_modules"))
 
-let sellApi = require("./sellApi.js") 
+let sellApi = require("./Api/sellApi.js") 
 app.use("", sellApi)
 
+let userApi = require("./Api/api.js") 
+app.use("", userApi)
+
 app.listen(9999)
+

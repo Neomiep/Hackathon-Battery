@@ -1,4 +1,4 @@
-import UsersRepository from './user-repository.js';
+import UsersRepository from './repository.js';
 import EventsHandler from './events-handler.js';
 
 let UsersRepository = new UsersRepository();
