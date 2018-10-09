@@ -6,14 +6,17 @@ class EventsHandler {
 
      registerAdduser() {
         $('#Register').on('click', async () => {
-            let $input = $("#register");
-            let $inputFname = $("#first-name")
-            let $inputLname = $("#last-name")
-            if ($input.val() === "" || $inputFname.val() === "" || $inputLname.val() === "") {
+            let $input = $("#register").val();
+            let $inputFname = $("#first-name").val();
+            let $inputLname = $("#last-name").val();
+            if ($input === "" || $inputFname === "" || $inputLname === "") {
                 alert("Please enter text!");
             } else {
-             await this.usersRepository.addUser($input.val(), $inputFname.val(), $inputLname.val())
+             await this.usersRepository.addUser($input, $inputFname, $inputLname)
             }
+            $("#register").val("")
+            $("#first-name").val("")
+            $("#last-name").val("")
         });
     }
 

@@ -11,8 +11,11 @@ router.get('/users', function (req, res) {
   })
 });
 
-router.post('/users', function (req, res) {
-  let NewUser = new User(req.body)
+router.post('/users/:firstname/:lastname/:username', function (req, res) {
+  let username = req.params.username
+  let firstname = req.params.firstname
+  let lastname = req.params.lastname
+  let NewUser = new User({firstName:firstname,lastName:lastname,userName:username})
   NewUser.save(function (err, data) {
     if (err) {
       res.status(400).send(err);

@@ -17,7 +17,7 @@ class UsersRepository {
     async addUser(username,firstname,lastname) {
         const newUser = {username:username,firstname:firstname,lastname:lastname};
         try {
-            let user = await $.post('/users', newUser)
+            let user = await $.post('/users/'+firstname + "/" + lastname + "/" + username, newUser)
             this.users.push(user);
         } catch (error) {
             throw error;
@@ -25,7 +25,7 @@ class UsersRepository {
     }
 
     addSell(amount){
-        return $.sell('/sell', {amount: amount}).then((data)=>{
+        return $.sell('/users/sell', {amount: amount}).then((data)=>{
             this.sell.push(data)
         })
     }
