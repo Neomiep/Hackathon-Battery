@@ -1,7 +1,8 @@
 let router = require("express").Router();
 let Sell = require('../Models/sellingModel.js')
 
-router.post('/users/sell',(req, res) =>{
+router.post('/homepage/:id/sell',(req, res) =>{
+    let id = req.params.id
 const newSell= new Sell(req.body)
 newSell.save().exec((err,data)=>{
     if(err){res.status(500).send(err)}
@@ -10,7 +11,7 @@ newSell.save().exec((err,data)=>{
     }
 })
 });
-
+//fix
 
 
 module.exports = router;
