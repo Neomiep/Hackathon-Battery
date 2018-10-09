@@ -5,7 +5,7 @@ let userSchema = new Schema ({
     firstName: String,
     lastName: String,
     userName: String,
-    selling: [{type: Schema.Types.ObjectId, ref: "selling"}]
+    selling: [{type: Schema.Types.ObjectId, ref: "selling"}],
 })
 
 let User = mongoose.model("user", userSchema);
