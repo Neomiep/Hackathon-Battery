@@ -8,7 +8,7 @@ router.get('/users/:username', function (req, res) {
     if (err) {
       res.status(500).send(err);
     }
-    res.send(user);
+    else{res.send(user)}
   })
 })
 
