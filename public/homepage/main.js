@@ -8,4 +8,6 @@ let eventsHandler = new EventsHandler(sellRepository,sellRenderer)
 
 eventsHandler.onLoadHomepage()
 eventsHandler.registerAddSell()
+eventsHandler.registerShowBuy()
+eventsHandler.deleteSale()
 eventsHandler.logout()

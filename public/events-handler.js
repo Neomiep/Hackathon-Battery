@@ -29,7 +29,6 @@ class EventsHandler {
             let user = await this.usersRepository.login(username)
             if (user[0] == undefined) {
                 alert("User not found.")
-                //make it work
             }
             else {
                 localStorage.setItem("user", JSON.stringify(user))

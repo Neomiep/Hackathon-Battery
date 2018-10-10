@@ -67,6 +67,16 @@
 
     </div>
 
+    <script id="sales-template" type="text/x-handlebars-template">
+    {{#each sale}}
+    <div class="sale">
+      <div class="salediv">{{#each userSelling}} <span class="username">{{userName}}</span> {{/each}} is selling <span class="amount">{{amount}}</span>%</div>
+      <button type="button" class="buy btn">Buy</button>
+      <hr>
+    </div>
+
+    {{/each}}
+    </script>
     
     <script src="\jquery\dist\jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

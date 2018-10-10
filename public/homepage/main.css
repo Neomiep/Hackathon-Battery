@@ -16,6 +16,9 @@ i{
     height: 50px;
     width: 150px;
 }
+.salediv{
+    display:inline-block;
+}
 #buy, #sell{
     height: 50px;
     width: 75px;  
