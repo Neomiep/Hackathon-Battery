@@ -4,7 +4,7 @@ body{
 i{
     height:100px;
 }
-#battery{
+.battery{
     width:100%;
     height:150px;
     font-size:8em;
