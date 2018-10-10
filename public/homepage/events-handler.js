@@ -16,9 +16,9 @@ class EventsHandler {
             if($amount === "") {
                 console.log ('Write text!')
             }
-            else if($amount > $battery){
-                alert("You're battery is too low!!")
-            }
+            // else if($amount > $battery){
+            //     alert("You're battery is too low!!")
+            // }
             else {
                 await this.sellRepository.addSell($amount)
                 let user = await this.sellRepository.getUser()
