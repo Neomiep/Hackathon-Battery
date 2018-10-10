@@ -3,7 +3,8 @@ const Schema = mongoose.Schema
 
 let notificationSchema = new Schema({
     userbuying: [{type:Schema.Types.ObjectId, ref: "user"}],
-    aproved: Null
+    userselling: [{type:Schema.Types.ObjectId, ref: "user"}],
+    amount: Number
 })
 
 let Notification = mongoose.model("notification", notificationSchema)
