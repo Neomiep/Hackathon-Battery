@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.get('/users/:username', function (req, res) {
   let username = req.params.username
-  User.find({userName:username}).exec((err, user) => {
+  User.find({userName:username}).populate('selling notification notification.user notification.user selling.user').exec((err, user) => {
     if (err) {
       res.status(500).send(err);
     }
