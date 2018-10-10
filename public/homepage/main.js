@@ -7,4 +7,4 @@ let sellRenderer = new SellRenderer();
 let eventsHandler = new EventsHandler(sellRepository,sellRenderer)
 
 eventsHandler.registerAddSell()
-
+eventsHandler.logout()
