@@ -18,7 +18,7 @@ class EventsHandler {
 
     logout(){
         $("#logout").on("click",()=>{
-            // localStorage.removeItem("user")
+            localStorage.removeItem("user")
             $(location).attr('href', 'http://localhost:9999')
         })
     }

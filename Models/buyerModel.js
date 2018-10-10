@@ -1,11 +1,11 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
-let buyerSchema = new Schema({
+let notificationSchema = new Schema({
     userbuying: [{type:Schema.Types.ObjectId, ref: "user"}],
     aproved: Null
 })
 
-let Buyer = mongoose.model("buyer", buyerSchema)
+let Notification = mongoose.model("notification", notificationSchema)
 
-module.exports = Buyer;
+module.exports = Notification;
