@@ -13,6 +13,12 @@ i{
 #notifications{
     display:block;
     margin:0 auto;
+    height: 50px;
+    width: 150px;
+}
+#buy, #sell{
+    height: 50px;
+    width: 75px;  
 }
 .buy-sell{
     text-align:center;

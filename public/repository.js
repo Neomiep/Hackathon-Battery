@@ -1,8 +1,8 @@
 class UsersRepository {
 
-    async login(){
+    async login(username){
         try {
-        let data = await $.get("/users")
+        let data = await $.get("/users/"+username)
         return data
         }
         catch(err){
@@ -15,7 +15,6 @@ class UsersRepository {
         try {
             let user = await $.post('/users/'+firstname + "/" + lastname + "/" + username, newUser)
             return user
-            // this.users.push(user);
         } catch (error) {
             throw error;
         }
