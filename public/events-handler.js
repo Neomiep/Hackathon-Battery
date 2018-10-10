@@ -4,7 +4,7 @@ class EventsHandler {
 
     }
 
-     registerAdduser() {
+    registerAdduser() {
         $('#Register').on('click', async () => {
             let $input = $("#register").val();
             let $inputFname = $("#first-name").val();
@@ -12,9 +12,9 @@ class EventsHandler {
             if ($input === "" || $inputFname === "" || $inputLname === "") {
                 alert("Please enter text!");
             } else {
-             let user = await this.usersRepository.addUser($input, $inputFname, $inputLname)
-             localStorage.setItem("user", JSON.stringify(user))
-             location.href = "/homepage";
+                let user = await this.usersRepository.addUser($input, $inputFname, $inputLname)
+                localStorage.setItem("user", JSON.stringify(user))
+                location.href = "/homepage";
             }
             $("#register").val("")
             $("#first-name").val("")
@@ -23,12 +23,18 @@ class EventsHandler {
         });
     }
 
-    registerLogin(){
-        $("#Login").on("click",async()=>{
+    registerLogin() {
+        $("#Login").on("click", async () => {
             let username = $("#login").val()
             let user = await this.usersRepository.login(username)
-            localStorage.setItem("user", JSON.stringify(user))
-            location.href = "/homepage";
+            if (user[0] == undefined) {
+                alert("User not found.")
+                //make it work
+            }
+            else {
+                localStorage.setItem("user", JSON.stringify(user))
+                location.href = "/homepage";
+            }
             $("#login").val("")
         })
     }
