@@ -3,16 +3,33 @@ class EventsHandler {
         this.sellRepository = sellRepository;
         this.sellRenderer = sellRenderer
     }
+
+    onLoadHomepage(){
+        this.sellRepository.homepageLoad()
+    }
+
     registerAddSell() {
-        $('#post-sell').on('click', ()=>{
+        $('#post-sell').on('click', async()=>{
             let $amount = $('#amount-sell').val();
+            let $battery = $("#battery").val()
+
             if($amount === "") {
                 console.log ('Write text!')
             }
-            else {
-                this.sellRepository.addSell($amount)
+            else if($amount > $battery){
+                alert("You're battery is too low!!")
             }
-            $amount.val("")
+            else {
+                await this.sellRepository.addSell($amount)
+                let user = await this.sellRepository.getUser()
+                localStorage.setItem("user", JSON.stringify(user))
+            }
+        })
+    }
+
+    registerShowBuy(){
+        $("#buy").on('click',()=>{
+            
         })
     }
 

@@ -1,18 +1,16 @@
 let router = require("express").Router();
-let Sell = require('../Models/sellingModel.js')
-let User = require('../Models/userModel.js')
+let Sale = require('../Models/sellingModel')
+let User = require('../Models/userModel')
 
-router.post('/homepage/:id/sell',(req, res) =>{
+router.post('/users/:id/sell/:amount',(req, res) =>{
 let id = req.params.id
-const newSell= new Sell(req.body)
-newSell.save().exec((err,data)=>{
+let newSell= new Sale({amount: req.params.amount})
+newSell.save()
+User.findByIdAndUpdate(id, {$push:{"selling": newSell._id}}, {new:true}).exec((err)=>{
     if(err){res.status(500).send(err)}
-    else{
-        res.send(data)
-    }
 })
+res.send(newSell)
 });
-//fix
 
 
 module.exports = router;

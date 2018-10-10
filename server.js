@@ -15,10 +15,10 @@ app.use(express.static("public"))
 app.use(express.static("node_modules"))
 
 let sellApi = require("./Api/sellApi.js") 
-app.use("", sellApi)
+app.use("/", sellApi)
 
 let userApi = require("./Api/api.js") 
-app.use("", userApi)
+app.use("/", userApi)
 
 app.listen(9999)
 
