@@ -15,6 +15,13 @@ class EventsHandler {
             $amount.val("")
         })
     }
+
+    logout(){
+        $("#logout").on("click",()=>{
+            // localStorage.removeItem("user")
+            $(location).attr('href', 'http://localhost:9999')
+        })
+    }
 }
 
 export default EventsHandler
