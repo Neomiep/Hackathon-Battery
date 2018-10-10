@@ -23,6 +23,8 @@ class EventsHandler {
                 await this.sellRepository.addSell($amount)
                 let user = await this.sellRepository.getUser()
                 localStorage.setItem("user", JSON.stringify(user))
+                let $total = parseInt($battery) - parseInt($amount) 
+                $("#battery").html($total)
             }
         })
     }
