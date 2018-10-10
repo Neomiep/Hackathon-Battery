@@ -25,7 +25,8 @@ class EventsHandler {
 
     registerLogin(){
         $("#Login").on("click",async()=>{
-            let user = await this.usersRepository.login()
+            let username = $("#login").val()
+            let user = await this.usersRepository.login(username)
             localStorage.setItem("user", JSON.stringify(user))
             location.href = "/homepage";
             $("#login").val("")

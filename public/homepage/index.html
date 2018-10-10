@@ -16,28 +16,28 @@
       <h5 id="title"><span id="color-dark">BatteryLife</span><span id="color">.inc</span></h5>
     </nav>
 
-    <h1 id="battery"></h1>
+    <h1 id="battery">100</h1>
 
     <div class="buy-sell">
-      <button type="button" id="buy" class="btn" data-toggle="modal" data-target="#buyModal">Buy</button>
+      <button type="button" id="buy" class="btn btn-outline-success" data-toggle="modal" data-target="#buyModal">Buy</button>
 
-      <button type="button" id="sell" class="btn" data-toggle="modal" data-target="#sellModal">Sell</button>
+      <button type="button" id="sell" class="btn btn-outline-success" data-toggle="modal" data-target="#sellModal">Sell</button>
     </div>
-    <button type="button" id="notifications" class="btn">Notifications</button>
+    <button type="button" id="notifications" class="btn btn-success">Notifications</button>
 
     <div id="buyModal" class="modal fade" role="dialog">
       <div class="modal-dialog">
 
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Buy</h4>
+            <h4 class="modal-title ">Buy</h4> 
+            <button type="button" class="close btn-outline-success" data-dismiss="modal">&times;</button>
           </div>
           <div class="modal-body">
             <div id="buy-options"></div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-outline-success" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
@@ -47,17 +47,18 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title">Sell</h4>
+            <button type="button" class="close btn-outline-success" data-dismiss="modal">&times;</button>
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <input type="text" class="form-control" id="amount-sell" placeholder="Amount">%
+              <input type="number" min="0" max="100" class="form-control" id="amount-sell" placeholder="Amount (%)">
             </div>
-            <button type="button" class="btn" id="post-sell">Post</button>
+           
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+             <button type="button" class="btn btn-outline-success" id="post-sell">Post</button>
+            <button type="button" class="btn btn-outline-success" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>

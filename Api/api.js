@@ -2,9 +2,9 @@ const express = require('express');
 let User = require('../Models/userModel');
 const router = express.Router();
 
-router.get('/users', function (req, res) {
-  let username = req.body
-  User.find({userName:"Hi"}).exec((err, user) => {
+router.get('/users/:username', function (req, res) {
+  let username = req.params.username
+  User.find({userName:username}).exec((err, user) => {
     if (err) {
       res.status(500).send(err);
     }
