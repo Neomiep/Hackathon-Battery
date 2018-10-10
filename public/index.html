@@ -1,47 +1,65 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Login/Registration</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="\bootstrap\dist\css\bootstrap.css" />
-    <link rel="stylesheet" href="\@fortawesome\fontawesome-free\css\fontawesome.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-
+  <title>Login/Registration</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
-    <div class="container">
-        <nav class="navbar">
-            <h5 id="title"><span id="color-dark">BatteryLife</span><span id="color">.inc</span></h5>
-            <div id="names"> Brought to you by Neomie & Yuval^2</div>
-        </nav>
-        <div class="one">
-            <h2>Login</h2>
-            <div class="form-group">
-                <input type="text" class="form-control" id="login" placeholder="Username">
-            </div>
-            <button type="button" class="btn" id="Login">Login</button>
-            <!-- get request for link -->
+  <div class="main">
+    <div class="header">
+      <div class="header_resize">
+        <div class="logo">
+          <h1><a href="index.html">BatteryLife<span>.inc</span></a></h1>
         </div>
-        <hr>
-        <div class="two">
-            <h2>Register</h2>
-            <div class="form-group">
+        <div class="names">
+          Brought to you by Neomie & Yuval^2
+
+        </div>
+        <div class="clr"></div>
+        <div class="slider">
+          <div class="clr">
+            <div class="one">
+              <h2>Login</h2>
+              <div class="form-group">
+                <input type="text" class="form-control" id="login" placeholder="Username">
+              </div>
+              <button type="button" class="btn" id="Login">Login</button>
+              <!-- get request for link -->
+            </div>
+            <hr>
+            <div class="two">
+              <h2>Register</h2>
+              <div class="form-group">
                 <input type="text" class="form-control" id="register" placeholder="Username">
                 <input type="text" class="form-control" id="first-name" placeholder="First Name">
                 <input type="text" class="form-control" id="last-name" placeholder="Last Name">
+              </div>
+              <button type="button" class="btn" id="Register">Submit</button>
+              <!-- post and open on user -->
             </div>
-            <button type="button" class="btn" id="Register">Submit</button>
-            <!-- post and open on user -->
-        </div>
-    </div>
+          </div>
 
-    <script src="\jquery\dist\jquery.js"></script>
-    <script src="\handlebars\dist\handlebars.js"></script>
-    <script src="main.js" type="module"></script>
+
+
+        </div>
+      </div>
+      <div class="clr"></div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/cufon-yui.js"></script>
+  <script type="text/javascript" src="js/cufon-quicksand.js"></script>
+  <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script src="\jquery\dist\jquery.js"></script>
+  <script src="\handlebars\dist\handlebars.js"></script>
+  <script src="main.js" type="module"></script>
+
 </body>
 
 </html>
