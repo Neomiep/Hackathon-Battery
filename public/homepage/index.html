@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>My Acount</title>
   <meta charset="utf-8">
@@ -8,10 +9,12 @@
   <link rel="stylesheet" href="\@fortawesome\fontawesome-free\css\fontawesome.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
 </head>
+
 <body>
-<div class="container-fluid">
+  <div class="container-fluid">
 
     <nav class="navbar">
       <h5 id="title"><span id="color-dark">BatteryLife</span><span id="color">.inc</span></h5>
@@ -22,29 +25,34 @@
       <span id="battery"></span>%
       <img src="\images\battery.png" class="img-battery rounded float-left" alt="...">
     </h1>
-    
-    <div class="buttons">
-    <div class="buy-sell">
-      <button type="button" id="buy" class="btn btn-success" data-toggle="modal" data-target="#buyModal">Buy</button>
 
-      <button type="button" id="sell" class="btn btn-success" data-toggle="modal" data-target="#sellModal">Sell</button>
+    <div class="buttons">
+      <div class="buy-sell">
+        <button type="button" id="buy" class="btn btn-success" data-toggle="modal" data-target="#buyModal">Buy</button>
+
+        <button type="button" id="sell" class="btn btn-success" data-toggle="modal" data-target="#sellModal">Sell</button>
+      </div>
+      <button type="button" id="history" class="btn btn-success" data-toggle="modal" data-target="#historyModal">History</button>
     </div>
-    <button type="button" id="history" class="btn btn-success" data-toggle="modal" data-target="#historyModal">History</button>
-  </div>
 
     <div id="buyModal" class="modal fade" role="dialog">
       <div class="modal-dialog">
 
         <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title buy-modal">Buy</h4> 
-            <button type="button" class="close btn-outline-success" data-dismiss="modal">&times;</button>
-          </div>
-          <div class="modal-body">
-            <div id="buy-options"></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-outline-success" data-dismiss="modal">Close</button>
+
+          <div class="scrollbar2 scrollbar-success">
+            <div class="force-overflow">
+              <div class="modal-header">
+                <h4 class="modal-title buy-modal">Buy</h4>
+                <button type="button" class="close btn-outline-success" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <div id="buy-options"></div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-success" data-dismiss="modal">Close</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -61,10 +69,10 @@
             <div class="form-group">
               <input type="number" min="0" max="100" class="form-control" id="amount-sell" placeholder="Amount (%)">
             </div>
-           
+
           </div>
           <div class="modal-footer">
-             <button type="button" class="btn btn-outline-success" id="post-sell" data-dismiss="modal">Post</button>
+            <button type="button" class="btn btn-outline-success" id="post-sell" data-dismiss="modal">Post</button>
             <button type="button" class="btn btn-outline-success" data-dismiss="modal">Close</button>
           </div>
         </div>
@@ -75,23 +83,27 @@
       <div class="modal-dialog">
 
         <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title buy-modal">History</h4> 
-            <button type="button" class="close btn-outline-success" data-dismiss="modal">&times;</button>
-          </div>
-          <div class="modal-body">
-            <div id="history-data"></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-outline-success" data-dismiss="modal">Close</button>
+          <div class="scrollbar scrollbar-success">
+            <div class="force-overflow">
+              <div class="modal-header">
+                <h4 class="modal-title buy-modal">History</h4>
+                <button type="button" class="close btn-outline-success" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <div id="history-data"></div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-success" data-dismiss="modal">Close</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    </div>
+  </div>
 
-    <script id="sales-template" type="text/x-handlebars-template">
+  <script id="sales-template" type="text/x-handlebars-template">
     {{#each sale}}
     <div class="sale border-buy">
       <div class="salediv">{{#each userSelling}} <span class="username">{{userName}}</span> {{/each}} is selling <span class="amount">{{amount}}</span>% <i class="fas fa-battery-full"></i></div>
@@ -100,7 +112,7 @@
     {{/each}}
     </script>
 
-    <script id="history-template" type="text/x-handlebars-template">
+  <script id="history-template" type="text/x-handlebars-template">
     {{#each history}}
     {{#if sold}}
       <div class="sold border-history">
@@ -114,13 +126,13 @@
       {{/if}}
     {{/each}}
     </script>
-    
-    <script src="\jquery\dist\jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="\handlebars\dist\handlebars.js"></script>
-    <script src="main.js" type="module"></script>
-    <script src="battery.js" type="module"></script>
-    <div class="span"></div>
+
+  <script src="\jquery\dist\jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="\handlebars\dist\handlebars.js"></script>
+  <script src="main.js" type="module"></script>
+  <script src="battery.js" type="module"></script>
+  <div class="span"></div>
 </body>
 
 </html>
