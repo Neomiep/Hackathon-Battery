@@ -102,13 +102,13 @@
     <script id="history-template" type="text/x-handlebars-template">
     {{#each history}}
     {{#if sold}}
-      <div class="sold">
-        You sold {{amount}}%.
+      <div class="sold border-history">
+        You sold {{amount}}% <i class="fas fa-battery-full"></i>
       </div>
       {{/if}}
       {{#if bought}}
-      <div class="bought">
-        You bought {{amount}}%.
+      <div class="bought border-history">
+        You bought {{amount}}% <i class="fas fa-battery-full"></i>
       </div>
       {{/if}}
     {{/each}}

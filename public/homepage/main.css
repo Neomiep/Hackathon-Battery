@@ -81,7 +81,7 @@ i{
     background: linear-gradient(rgba(167, 177, 170, 0.281), rgba(97, 105, 99, 0.658));
 }
 .span{
-    height: 90px;
+    height: 148px;
 }
 .buttons{
     border: 5px solid rgba(161, 167, 161, 0.623);
@@ -89,7 +89,7 @@ i{
     width: 300px;
     height: 250px;
     margin-left: 800px;
-    margin-top: -110px;
+    margin-top: -125px;
     padding-top: 40px;
     background: linear-gradient(rgba(167, 177, 170, 0.281), rgba(97, 105, 99, 0.658));
 }
@@ -117,4 +117,16 @@ i{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-left: 10px;
     padding-top: 5px;
+}
+.border-history{
+    height: 50px;
+    width: 150px;
+    border: 3px solid rgba(86, 175, 86, 0.555);
+    border-radius: 10px; 
+    margin-bottom:10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-left: 10px;
+    padding-top: 7px;
+    padding-right: 10px;
+    padding-bottom: 5px;
 }
