@@ -12,7 +12,7 @@ class EventsHandler {
                 alert("Please enter text!");
             } else {
                 let user = await this.usersRepository.addUser($input, $inputFname, $inputLname)
-                localStorage.setItem("user", JSON.stringify(user))
+                localStorage.setItem("user", JSON.stringify([user]))
                 location.href = "/homepage";
             }
             $("#register").val("")
