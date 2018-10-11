@@ -78,11 +78,14 @@ h1 small {
 	height:404px;
 }
 .names {
-	float:right;
+	/* float:right; */
 	padding:30px;
 	color: #ffffff;
 	font-size: 15px;
 	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+	position: absolute;
+	top: 550px;
+	left: 1050px;
 }
 body {
 	font-family: Arial, Helvetica, sans-serif ;
@@ -113,12 +116,14 @@ body {
 	background: -webkit-linear-gradient(rgba(165, 182, 171, 0.541), rgb(223, 228, 224));
 	border: 1px solid rgb(150, 151, 150);
 	width: 470px;
-	height: 190px;
+	height: 200px;
 	border-radius: 10px;
 	padding-left: 20px;
-	margin-top: 20px;
+	margin-top: 20px; 
 	margin:0 auto;
-  
+	margin-right: 650px;
+	position: absolute;
+	top: 206px;
   }
   
   .two{
@@ -128,9 +133,12 @@ body {
 	height: 270px;
 	border-radius: 10px;
 	padding-left: 20px;
-	margin:0 auto;
-  
-  }
+	/* margin:0 auto; */
+	margin-left: 600px;
+	position: absolute;
+	top: 206px;
+	left: 100px;
+}
   
   .navbar {
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
