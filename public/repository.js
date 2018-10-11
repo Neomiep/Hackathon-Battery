@@ -2,7 +2,8 @@ class UsersRepository {
 
     constructor() {
         this.user = [],
-            this.sales = []
+        this.sales = [],
+        this.history = []
     }
 
     async login(username) {
@@ -68,8 +69,26 @@ class UsersRepository {
             let id = this.user[0]._id
             let username = this.user[0].userName
             await $.post('/users/' + id + '/sell/' + amount, { amount: amount })
-            let data = await $.get("/users/" + username)
-            return data
+        }
+        catch (err) {
+            throw err
+        }
+    }
+
+    async addHistory(amount, userSellingUsername) {
+        try {
+            let userBuyingId = this.user[0]._id
+            await $.post('/users/' + userBuyingId + '/' + userSellingUsername + '/history/' + amount, { amount: amount })
+        }
+        catch (err) {
+            throw err
+        }
+    }
+
+    async getHistory() {
+        try {
+            let history = await $.get("/users/history")
+            this.history = history
         }
         catch (err) {
             throw err

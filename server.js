@@ -17,8 +17,11 @@ app.use(express.static("node_modules"))
 let sellApi = require("./Api/sellApi.js") 
 app.use("/", sellApi)
 
-let userApi = require("./Api/api.js") 
+let userApi = require("./Api/userApi.js") 
 app.use("/", userApi)
+
+let historyApi = require("./Api/historyApi.js") 
+app.use("/", historyApi)
 
 app.listen(9999)
 
