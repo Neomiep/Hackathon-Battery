@@ -24,9 +24,9 @@
     </h1>
     <div class="buttons">
     <div class="buy-sell">
-      <button type="button" id="buy" class="btn btn-outline-success" data-toggle="modal" data-target="#buyModal">Buy</button>
+      <button type="button" id="buy" class="btn btn-success" data-toggle="modal" data-target="#buyModal">Buy</button>
 
-      <button type="button" id="sell" class="btn btn-outline-success" data-toggle="modal" data-target="#sellModal">Sell</button>
+      <button type="button" id="sell" class="btn btn-success" data-toggle="modal" data-target="#sellModal">Sell</button>
     </div>
     <button type="button" id="history" class="btn btn-success">History</button>
   </div>
@@ -74,7 +74,7 @@
 
     <script id="sales-template" type="text/x-handlebars-template">
     {{#each sale}}
-    <div class="sale">
+    <div class="sale border-buy">
       <div class="salediv">{{#each userSelling}} <span class="username">{{userName}}</span> {{/each}} is selling <span class="amount">{{amount}}</span>% <i class="fas fa-battery-full"></i></div>
       <button type="button" class="buy btn btn-success" data-dismiss="modal">Buy</button>
     </div>
