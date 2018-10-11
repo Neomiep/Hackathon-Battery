@@ -1,5 +1,6 @@
 body{
-    font-family:Arial, Helvetica, sans-serif
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image:linear-gradient(rgba(240, 255, 245, 0.945), rgb(135, 228, 155)) !important;
 }
 i{
     height:100px;
@@ -10,18 +11,20 @@ i{
     font-size:8em;
     text-align:center;
 }
-#notifications{
+#history{
     display:block;
     margin:0 auto;
-    height: 50px;
-    width: 150px;
+    height: 70px;
+    width: 180px;
+    font-size: 20px;
 }
 .salediv{
     display:inline-block;
 }
 #buy, #sell{
-    height: 50px;
-    width: 75px;  
+    height: 70px;
+    width: 90px; 
+    font-size: 20px; 
 }
 .buy-sell{
     text-align:center;
@@ -33,14 +36,26 @@ i{
   }
   
   #title{
+    text-shadow: 0 1px 0 #ccc,
+    0 2px 0 #c9c9c9,
+    0 3px 0 #bbb,
+    0 4px 0 #b9b9b9,
+    0 5px 0 #aaa,
+    0 6px 1px rgba(0,0,0,.1),
+    0 0 5px rgba(0,0,0,.1),
+    0 1px 3px rgba(0,0,0,.3),
+    0 3px 5px rgba(0,0,0,.2),
+    0 5px 10px rgba(0,0,0,.25),
+    0 10px 10px rgba(0,0,0,.2),
+    0 20px 20px rgba(0,0,0,.15);
     font-size: 30px;
   }
   #color{
-  color: #3CBC8D
+  color: rgb(125, 214, 140)
   }
   
   #color-dark{
-    color:rgb(42, 121, 92);
+    color:rgb(4, 117, 42);
   }
 
   #amount {
@@ -53,4 +68,44 @@ i{
     margin-left:350px;
     margin-top: 80px;
 }
-  
+.img-battery{
+    margin-left: 20px;    
+}
+.battery{
+    border: 5px solid rgba(161, 167, 161, 0.623);
+    width: 300px;
+    border-radius: 20px;
+    margin-left: 250px;
+    margin-top: 100px;
+    display: inline-block;
+    background: linear-gradient(rgba(167, 177, 170, 0.281), rgba(97, 105, 99, 0.658));
+}
+.span{
+    height: 250px;
+}
+.buttons{
+    border: 5px solid rgba(161, 167, 161, 0.623);
+    border-radius: 20px;
+    width: 300px;
+    height: 250px;
+    margin-left: 800px;
+    margin-top: -110px;
+    padding-top: 20px;
+    background: linear-gradient(rgba(167, 177, 170, 0.281), rgba(97, 105, 99, 0.658));
+}
+#logout{
+    height: 50px;
+    width: 100px;
+    border: 5px solid rgba(86, 175, 86, 0.555);
+    border-radius: 20px;
+}
+.h1-text{
+    padding-top: 10px;
+    font-size: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgb(85, 88, 84)
+}
+.buy-modal{
+    color: green;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
