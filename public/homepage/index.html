@@ -28,7 +28,7 @@
 
       <button type="button" id="sell" class="btn btn-success" data-toggle="modal" data-target="#sellModal">Sell</button>
     </div>
-    <button type="button" id="history" class="btn btn-success">History</button>
+    <button type="button" id="history" class="btn btn-success" data-toggle="modal" data-target="#historyModal">History</button>
   </div>
 
     <div id="buyModal" class="modal fade" role="dialog">
@@ -70,6 +70,24 @@
       </div>
     </div>
 
+    <div id="historyModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title buy-modal">History</h4> 
+            <button type="button" class="close btn-outline-success" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div id="history-data"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-success" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     </div>
 
     <script id="sales-template" type="text/x-handlebars-template">
@@ -78,7 +96,21 @@
       <div class="salediv">{{#each userSelling}} <span class="username">{{userName}}</span> {{/each}} is selling <span class="amount">{{amount}}</span>% <i class="fas fa-battery-full"></i></div>
       <button type="button" class="buy btn btn-success" data-dismiss="modal">Buy</button>
     </div>
+    {{/each}}
+    </script>
 
+    <script id="history-template" type="text/x-handlebars-template">
+    {{#each history}}
+    {{#if sold}}
+      <div class="sold">
+        You sold {{amount}}%.
+      </div>
+      {{/if}}
+      {{#if bought}}
+      <div class="bought">
+        You bought {{amount}}%.
+      </div>
+      {{/if}}
     {{/each}}
     </script>
     

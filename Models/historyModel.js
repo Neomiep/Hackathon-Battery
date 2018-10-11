@@ -5,6 +5,8 @@ let historySchema = new Schema({
     amount: Number,
     userBuying: [{type:Schema.Types.ObjectId, ref: "user"}],
     userSelling: [{type:Schema.Types.ObjectId, ref: "user"}],
+    bought:"",
+    sold:""
 })
 
 let History = mongoose.model("history", historySchema)
