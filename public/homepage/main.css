@@ -90,7 +90,7 @@ i{
     height: 250px;
     margin-left: 800px;
     margin-top: -110px;
-    padding-top: 20px;
+    padding-top: 40px;
     background: linear-gradient(rgba(167, 177, 170, 0.281), rgba(97, 105, 99, 0.658));
 }
 #logout{
@@ -108,4 +108,14 @@ i{
 .buy-modal{
     color: green;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.border-buy{
+    height: 50px;
+    width: 220px;
+    border: 3px solid rgba(86, 175, 86, 0.555);
+    border-radius: 10px; 
+    margin-bottom:10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-left: 10px;
+    padding-top: 5px;
 }
