@@ -71,7 +71,7 @@ class EventsHandler {
     registerGetHistory() {
         $("#history").on('click', async () => {
             await this.sellRepository.getHistory()
-            this.sellRenderer.renderHistory(this.sellRepository.history);
+            this.sellRenderer.renderHistory(this.sellRepository.history[0].history);
         })
 
     }

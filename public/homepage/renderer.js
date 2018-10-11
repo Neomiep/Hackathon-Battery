@@ -2,8 +2,8 @@ class Renderer{
     constructor(){
         this.$sales = $("#buy-options")
         this.$salesTemplate = $("#sales-template").html()
-        this.$history,
-        this.$historyTemplate;
+        this.$history = $("#history-data"),
+        this.$historyTemplate = $("#history-template").html();
     }
 
     renderBuy(sales){
@@ -12,7 +12,7 @@ class Renderer{
         let newHTML = template({sale:sales})
         this.$sales.append(newHTML)
     }
-    
+
     renderHistory(history){
         this.$history.empty();
         let template = Handlebars.compile(this.$historyTemplate);

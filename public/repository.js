@@ -87,8 +87,30 @@ class UsersRepository {
 
     async getHistory() {
         try {
-            let history = await $.get("/users/history")
+            let userId = this.user[0]._id
+            let history = await $.get("/users/history/"+userId)
             this.history = history
+
+
+            for(let i=0;i<this.history[0].history.length;i++){
+                if(this.user[0]._id == this.history[0].history[i].userBuying[0] && this.user[0]._id == this.history[0].history[i].userSelling[0]){
+                    this.history[0].history[i].bought = true
+                    this.history[0].history[i].sold = true
+                }
+                else if(this.user[0]._id == this.history[0].history[i].userSelling[0] && !(this.user[0]._id == this.history[0].history[i].userBuying[0])){
+                    this.history[0].history[i].sold = true
+                    this.history[0].history[i].bought = false
+                }
+                else if(this.user[0]._id == this.history[0].history[i].userBuying[0] && !(this.user[0]._id == this.history[0].history[i].userSelling[0])){
+                    this.history[0].history[i].bought = true
+                    this.history[0].history[i].sold = false
+                }
+                else if(!(this.user[0]._id == this.history[0].history[i].userBuying[0]) && !(this.user[0]._id == this.history[0].history[i].userSelling[0])){
+                    this.history[0].history[i].bought = false
+                    this.history[0].history[i].sold = false
+                }
+                else{alert("error")}
+            }
         }
         catch (err) {
             throw err
