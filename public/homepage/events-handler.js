@@ -16,29 +16,28 @@ class EventsHandler {
             if ($amount === "") {
                 console.log('Write text!')
             }
-            else if ($amount > $battery) {
+            else if (parseInt($amount) > parseInt($battery)) {
                 alert("You're battery is too low!!")
             }
             else {
                 await this.sellRepository.addSell($amount)
                 let user = await this.sellRepository.getUser()
                 localStorage.setItem("user", JSON.stringify(user))
-                let $total = parseInt($battery) - parseInt($amount) 
+                let $total = parseInt($battery) - parseInt($amount)
                 $("#battery").html($total)
             }
         })
     }
 
     registerShowBuy() {
-        $("#buy").on('click', () => {
-            this.sellRepository.getSales().then(() => {
-                this.sellRenderer.renderBuy(this.sellRepository.sales);
-            });
+        $("#buy").on('click', async() => {
+            await this.sellRepository.getSales()
+            this.sellRenderer.renderBuy(this.sellRepository.sales);
         })
     }
 
-    deleteSale() {
-        $("#buy-options").on("click",".buy", (event) => {
+    deleteSaleAddHistory() {
+        $("#buy-options").on("click", ".buy", async (event) => {
             let $battery = $("#battery").html()
             let $amount = $(event.currentTarget).closest(".sale").find(".amount").html()
             if (parseInt($battery) + parseInt($amount) > 100) {
@@ -46,9 +45,15 @@ class EventsHandler {
             } else {
                 let username = $(event.currentTarget).closest('.sale').find(".username").html()
                 let saleIndex = $(event.currentTarget).closest('.sale').index()
+                let amount = parseInt($amount)
 
-                this.sellRepository.deleteSale(saleIndex,username).then(()=>{
-                    this.sellRenderer.renderBuy(this.sellRepository.sales)});
+                await this.sellRepository.addHistory(amount, username)
+
+                await this.sellRepository.deleteSale(saleIndex, username)
+                this.sellRenderer.renderBuy(this.sellRepository.sales)
+
+                let user = await this.sellRepository.getUser()
+                localStorage.setItem("user", JSON.stringify(user))
 
                 let $total = parseInt($battery) + parseInt($amount)
                 $("#battery").html($total)
@@ -56,12 +61,19 @@ class EventsHandler {
         })
     }
 
-
     logout() {
         $("#logout").on("click", () => {
             localStorage.removeItem("user")
             $(location).attr('href', 'http://localhost:9999')
         })
+    }
+
+    registerGetHistory() {
+        $("#history").on('click', async () => {
+            await this.sellRepository.getHistory()
+            this.sellRenderer.renderHistory(this.sellRepository.history);
+        })
+
     }
 }
 
